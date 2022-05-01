@@ -1,17 +1,16 @@
 <template>
     <div>
-        <h1>{{ title }}</h1>
+        <SingleList></SingleList>
     </div>
 </template>
 
 <script>
+import SingleList from "./SingleList.vue";
     export default {
         name : 'AllList',
-        data () {
-            return {
-                title: "This is all list",
-            }
-        },
+        components: {
+            SingleList
+        }
     }
 </script>
 
