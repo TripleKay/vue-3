@@ -20,7 +20,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/allList',
     name: 'allList',
-    component : AllListPage
+    component: AllListPage
+  },
+  {
+    path: '/:pathMatch(.*)*',// for non register route 
+    component: () => import('../views/myShopList/404_Page.vue')
   }
 ]
 
