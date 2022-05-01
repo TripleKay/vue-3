@@ -10,6 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/about',
+    alias: '/about-us',//if route is about or about-us,view about page
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
