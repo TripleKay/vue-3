@@ -9,12 +9,9 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/about',
-    alias: '/about-us',//if route is about or about-us,view about page
+    path: '/about/:name/:age',
+    alias: '/about-us/:name/:age',//if route is about or about-us,view about page
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
@@ -22,10 +19,10 @@ const routes: Array<RouteRecordRaw> = [
     name: 'allList',
     component: AllListPage
   },
-  {
-    path: '/:pathMatch(.*)*',// for non register route 
-    component: () => import('../views/myShopList/404_Page.vue')
-  }
+  // {
+  //   path: '/:pathMatch(.*)*',// for non register route 
+  //   component: () => import('../views/myShopList/404_Page.vue')
+  // }
 ]
 
 const router = createRouter({
