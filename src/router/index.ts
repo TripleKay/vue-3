@@ -28,13 +28,25 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/todoAllList',
     name: 'todoAllList',
-    component: TodoAllList
+    component: TodoAllList,
+    beforeEnter: (to,from,next) => {
+      if(localStorage.getItem("vueAuth") == "true"){
+        next();
+      }else{
+        next('loginPage');
+      }
+    }
   },
   {
     path: '/todoEachList',
     name: 'todoEachList',
     component: TodoEachList
   },
+  {
+    path: '/loginPage',
+    name: 'loginPage',
+    component: () => import('../views/LoginPage.vue')
+  }
 ]
 
 const router = createRouter({

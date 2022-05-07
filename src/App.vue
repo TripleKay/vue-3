@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link :to="{ name: 'allList' }">AllList</router-link> |
-    <router-link :to="{ name: 'todoAllList' }">ToDoList</router-link>
+    <router-link :to="{ name: 'todoAllList' }">ToDoList</router-link> |
+    <router-link :to="{ name: 'loginPage' }">Login</router-link> 
 
   </nav>
   <router-view/>
