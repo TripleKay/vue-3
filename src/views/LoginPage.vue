@@ -21,6 +21,8 @@
                             <br>
                             <h1 class="text-success">{{ $store.state.name }}</h1>
                             <button class="btn btn-success" @click="alert()">Message</button>
+                            <!-- <h2 class="text-info">{{ getMyName }}</h2> -->
+                            <h2 class="text-info">{{ name }}</h2>
                         </div>
                     </div>
                 </div>
@@ -30,6 +32,7 @@
 </template>
 
 <script>
+    import { mapState } from "vuex";
     export default {
         name: 'LoginPage',
         data () {
@@ -40,6 +43,13 @@
                 }
             }
         },
+        // computed: { //method 1
+        //     getMyName () {
+        //         return this.$store.state.name;
+        //     }
+        // },
+        // computed: mapState({ getMyName: (state) => state.name }),//method 2
+        computed: mapState(['name']),//method 3
         methods: {
             loginPage () {
                 if(this.user.email != "" && this.user.password != ""){
