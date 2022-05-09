@@ -26,8 +26,7 @@
                             <h5 class="text-danger">getUserCount = {{ $store.getters.getUserCount }}</h5>
                             <h5 class="text-success">doneJob = {{ $store.getters.doneJob[0].name }}</h5>
                             <h5 class="text-success">unDoneJobCount = {{ $store.getters.unDoneJobCount }}</h5>
-
-
+                            <button class="btn btn-warning" @click="alertCount()">getters</button>
                         </div>
                     </div>
                 </div>
@@ -37,7 +36,8 @@
 </template>
 
 <script>
-    import { mapState } from "vuex";
+    import { mapState, mapGetters } from "vuex";
+    
     export default {
         name: 'LoginPage',
         data () {
@@ -57,6 +57,7 @@
         // computed: mapState(['name']),//method 3
         computed: {
             ...mapState(['name']),//method 4
+            ...mapGetters(['getUserCount', 'doneJob', 'unDoneJobCount']),
             otherMethod () {
                 return this.data
             }
@@ -74,6 +75,9 @@
             },
             alert() {
                 console.log(this.$store.state.name);
+            },
+            alertCount() {
+                alert(this.getUserCount);
             }
         }
     }
