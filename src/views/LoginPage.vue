@@ -17,12 +17,17 @@
                                 </div>
                                 <button class="btn btn-primary float-start" type="button" @click="loginPage()">Login</button>
                                 <button class="btn btn-danger ms-3 float-start" type="button" @click="logoutPage()">Logout</button>
+                                <button class="btn btn-success" @click="alert()">Message</button>
                             </form>
                             <br>
-                            <h1 class="text-success">{{ $store.state.name }}</h1>
-                            <button class="btn btn-success" @click="alert()">Message</button>
+                            <h3 class="text-success">{{ $store.state.name }}</h3>
                             <!-- <h2 class="text-info">{{ getMyName }}</h2> -->
-                            <h2 class="text-info">{{ name }}</h2>
+                            <h3 class="text-info">{{ name }}</h3>
+                            <h5 class="text-danger">getUserCount = {{ $store.getters.getUserCount }}</h5>
+                            <h5 class="text-success">doneJob = {{ $store.getters.doneJob[0].name }}</h5>
+                            <h5 class="text-success">unDoneJobCount = {{ $store.getters.unDoneJobCount }}</h5>
+
+
                         </div>
                     </div>
                 </div>
