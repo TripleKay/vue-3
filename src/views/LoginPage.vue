@@ -49,7 +49,13 @@
         //     }
         // },
         // computed: mapState({ getMyName: (state) => state.name }),//method 2
-        computed: mapState(['name']),//method 3
+        // computed: mapState(['name']),//method 3
+        computed: {
+            ...mapState(['name']),//method 4
+            otherMethod () {
+                return this.data
+            }
+        },
         methods: {
             loginPage () {
                 if(this.user.email != "" && this.user.password != ""){
