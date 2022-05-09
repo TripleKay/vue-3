@@ -1,13 +1,14 @@
 import { createStore } from 'vuex'
 
 export default createStore({
-  state: {
+  state: { //data
+    name: 'TRIPLE-K',
   },
-  getters: {
+  getters: { //computed
   },
-  mutations: {
+  mutations: { // action->use->change state data
   },
-  actions: {
+  actions: { //methods
   },
   modules: {
   }

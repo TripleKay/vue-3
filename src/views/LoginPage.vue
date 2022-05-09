@@ -18,6 +18,9 @@
                                 <button class="btn btn-primary float-start" type="button" @click="loginPage()">Login</button>
                                 <button class="btn btn-danger ms-3 float-start" type="button" @click="logoutPage()">Logout</button>
                             </form>
+                            <br>
+                            <h1 class="text-success">{{ $store.state.name }}</h1>
+                            <button class="btn btn-success" @click="alert()">Message</button>
                         </div>
                     </div>
                 </div>
@@ -47,6 +50,9 @@
             },
             logoutPage () {
                 localStorage.setItem("vueAuth","false");
+            },
+            alert() {
+                console.log(this.$store.state.name);
             }
         }
     }
